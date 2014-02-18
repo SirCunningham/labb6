@@ -11,7 +11,7 @@ public abstract class Component implements Iterable<Component>{
 
     public abstract double getWeight();
     
-    public abstract WidthIterator createWidthIterator(LinkedList<Component> comp);
+    public abstract WidthIterator createWidthIterator();
     
-    public abstract DepthIterator createDepthIterator(LinkedList<Component> comp);
+    public abstract DepthIterator createDepthIterator();
 }
