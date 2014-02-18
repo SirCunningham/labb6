@@ -12,6 +12,7 @@ public class CompositeDesignPatternMain {
         toiletBag.add(soap);
         System.out.println(toiletBag);
         System.out.println(toiletBag.getWeight());
+        WidthIterator iter = toiletBag.createWidthIterator();
         for (Component comp : toiletBag) {
             System.out.println(comp);
         }

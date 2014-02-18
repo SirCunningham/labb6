@@ -31,10 +31,10 @@ public class Leaf extends Component {
     public Iterator<Component> iterator() {
         return null;
     }
-    public DepthIterator createDepthIterator(LinkedList<Component> comp) {
+    public DepthIterator createDepthIterator() {
         return null;
     }
-    public WidthIterator createWidthIterator(LinkedList<Component> comp) {
+    public WidthIterator createWidthIterator() {
         return null;
     }
 }
