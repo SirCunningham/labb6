@@ -2,7 +2,7 @@ package labb6;
 
 import java.util.*;
 
-public class Composite implements Component {
+public class Composite extends Component {
 
     private String name;
     private double weight;

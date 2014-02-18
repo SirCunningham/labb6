@@ -1,6 +1,6 @@
 package labb6;
 
-public class Leaf implements Component {
+public class Leaf extends Component {
 
     String name;
     double weight;

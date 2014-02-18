@@ -3,13 +3,13 @@
 
 package labb6;
 
-public interface Component {
+public abstract class Component {
 
-    public void add(Component component);
+    public abstract void add(Component component);
 
-    public void remove(Component component);
+    public abstract void remove(Component component);
 
-    public Component getChild(int level);
+    public abstract Component getChild(int level);
 
-    public double getWeight();
+    public abstract double getWeight();
 }
