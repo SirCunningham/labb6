@@ -3,7 +3,7 @@
 
 package labb6;
 
-public abstract class Component {
+public abstract class Component implements Iterable<Component> {
 
     public abstract void add(Component component);
 

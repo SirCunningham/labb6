@@ -7,7 +7,6 @@ public class Composite extends Component {
     private String name;
     private double weight;
     private LinkedList<Component> components = new LinkedList<Component>();
-
     public Composite(String name, double weight) {
         this.name = name;
         this.weight = weight;
@@ -41,5 +40,9 @@ public class Composite extends Component {
             size+=component.getWeight();
         }
         return size;
+    }
+    public Iterator<Component> iterator() {
+        Iterator<Component> iter = components.iterator();
+        return iter;
     }
 }
