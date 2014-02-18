@@ -1,6 +1,6 @@
 package labb6;
 
-import java.util.Iterator;
+import java.util.*;
 
 public class Leaf extends Component {
 
@@ -29,6 +29,12 @@ public class Leaf extends Component {
         return weight;
     }
     public Iterator<Component> iterator() {
+        return null;
+    }
+    public DepthIterator createDepthIterator(LinkedList<Component> comp) {
+        return null;
+    }
+    public WidthIterator createWidthIterator(LinkedList<Component> comp) {
         return null;
     }
 }

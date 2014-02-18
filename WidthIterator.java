@@ -1,30 +1,36 @@
 package labb6;
-import java.util.Iterator;
+
+import java.util.*;
 
 public class WidthIterator<Component> implements Iterable<Component> {
-    private Component[] arrayList;
+
+    private LinkedList<Component> arrayList;
     private int size;
-    
-    public WidthIterator(Component[] arrayList) {
-        this.arrayList=arrayList;
-        this.size = arrayList.length;
+
+    public WidthIterator(LinkedList<Component> arrayList) {
+        this.arrayList = arrayList;
+        this.size = arrayList.size();
     }
+
     public Iterator<Component> iterator() {
         Iterator<Component> it = new Iterator<Component>() {
-            private int currentIndex=0;
-            
+
+            private int currentIndex = 0;
+
             public boolean hasNext() {
-                return currentIndex < size && arrayList[currentIndex] != null;
+                return currentIndex < size && arrayList.get(currentIndex) != null;
             }
+
             public Component next() {
-                return arrayList[currentIndex++];
+                return arrayList.get(currentIndex++);
             }
+
             public void remove() {
                 // TODO Auto-generated method stub
             }
-            
-            
-    };
+        };
         return it;
+
+
     }
 }
