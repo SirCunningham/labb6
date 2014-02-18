@@ -1,9 +1,7 @@
-//Läste inte igenom labben tillräckligt noga och såg inte att denna skulle vara en abstrakt klass och inte ett interface.
-//Ändrar sen
-
 package labb6;
+import java.util.*;
 
-public abstract class Component implements Iterable<Component> {
+public abstract class Component implements Iterable<Component>{
 
     public abstract void add(Component component);
 
@@ -12,4 +10,8 @@ public abstract class Component implements Iterable<Component> {
     public abstract Component getChild(int level);
 
     public abstract double getWeight();
+    
+    public abstract WidthIterator createWidthIterator(LinkedList<Component> comp);
+    
+    public abstract DepthIterator createDepthIterator(LinkedList<Component> comp);
 }

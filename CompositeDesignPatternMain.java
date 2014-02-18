@@ -12,5 +12,8 @@ public class CompositeDesignPatternMain {
         toiletBag.add(soap);
         System.out.println(toiletBag);
         System.out.println(toiletBag.getWeight());
+        for (Component comp : toiletBag) {
+            System.out.println(comp);
+        }
     }
 }
