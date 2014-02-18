@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-=======
-
->>>>>>> 879afd34b4850a3024c263d952b3c0fcaa935dad
 package labb6;
 
 import java.util.*;
@@ -160,8 +156,4 @@ public class BuilderList<E> implements List<E> {
         System.out.println(myBuilderList.test(500000, myArrayList));
     }
 }
-<<<<<<< HEAD
-=======
 
-
->>>>>>> 879afd34b4850a3024c263d952b3c0fcaa935dad

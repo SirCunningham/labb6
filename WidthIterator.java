@@ -2,7 +2,7 @@ package labb6;
 
 import java.util.*;
 
-public class WidthIterator<Component> implements Iterable<Component> {
+public class WidthIterator<Component> implements Iterator {
 
     private LinkedList<Component> arrayList;
     private int size;
@@ -11,7 +11,11 @@ public class WidthIterator<Component> implements Iterable<Component> {
         this.arrayList = arrayList;
         this.size = arrayList.size();
     }
-
+    
+    public void remove() {
+        
+    }
+    /*
     public Iterator<Component> iterator() {
         Iterator<Component> it = new Iterator<Component>() {
 
@@ -30,7 +34,10 @@ public class WidthIterator<Component> implements Iterable<Component> {
             }
         };
         return it;
+     * }
+     * 
+     * 
+     */
 
-
-    }
+    
 }
