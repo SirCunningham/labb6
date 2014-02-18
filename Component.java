@@ -3,7 +3,7 @@
 
 package labb6;
 
-public abstract class Component implements Iterable<Component> {
+public abstract class Component implements Iterable<Component>{
 
     public abstract void add(Component component);
 
@@ -12,4 +12,5 @@ public abstract class Component implements Iterable<Component> {
     public abstract Component getChild(int level);
 
     public abstract double getWeight();
+    
 }

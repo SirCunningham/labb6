@@ -1,4 +1,4 @@
-/*
+
 package labb6;
 
 import java.util.*;
@@ -126,5 +126,5 @@ public class BuilderList<E> implements List<E> {
     public static void main(String[] args) {
     }
 }
-*/
+
 
