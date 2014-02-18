@@ -1,6 +1,8 @@
 package labb6;
 
-public class Leaf implements Component {
+import java.util.Iterator;
+
+public class Leaf extends Component {
 
     String name;
     double weight;
@@ -25,5 +27,8 @@ public class Leaf implements Component {
     }
     public double getWeight() {
         return weight;
+    }
+    public Iterator<Component> iterator() {
+        return null;
     }
 }
