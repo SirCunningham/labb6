@@ -12,7 +12,7 @@ public abstract class Component implements Iterable<Component> {
     
     public abstract double getWeight();
     
-    public abstract BreadthIterator createWidthIterator();
+    public abstract BreadthIterator createBreadthIterator();
     
     public abstract DepthIterator createDepthIterator();
 }

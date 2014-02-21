@@ -38,7 +38,7 @@ public class Leaf extends Component {
         return null;
     }
 
-    public BreadthIterator createWidthIterator() {
+    public BreadthIterator createBreadthIterator() {
         return null;
     }
 }

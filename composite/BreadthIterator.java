@@ -43,10 +43,13 @@ public class BreadthIterator<Component> implements Iterator {
                 tempChildren.addAll((LinkedList<Component>) comp.getChildren());
             }
         }
+        if (tempChildren.size()==0) {
+            return q;
+        }
         return createQueue2(q, tempChildren);
     }
 
     public boolean hasNext() {
-        return !(q.size() == 1 || q.size()==0);
+        return !(q.size()==0);
     }
 }
