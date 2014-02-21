@@ -49,8 +49,8 @@ public class Composite extends Component {
         return iter;
     }
 
-    public WidthIterator createWidthIterator() {
-        return new WidthIterator(this);
+    public BreadthIterator createWidthIterator() {
+        return new BreadthIterator(this);
     }
 
     public DepthIterator createDepthIterator() {
