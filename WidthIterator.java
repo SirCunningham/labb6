@@ -15,29 +15,7 @@ public class WidthIterator<Component> implements Iterator {
     public void remove() {
         
     }
-    /*
-    public Iterator<Component> iterator() {
-        Iterator<Component> it = new Iterator<Component>() {
 
-            private int currentIndex = 0;
-
-            public boolean hasNext() {
-                return currentIndex < size && arrayList.get(currentIndex) != null;
-            }
-
-            public Component next() {
-                return arrayList.get(currentIndex++);
-            }
-
-            public void remove() {
-                // TODO Auto-generated method stub
-            }
-        };
-        return it;
-     * }
-     * 
-     * 
-     */
 
     
 }
