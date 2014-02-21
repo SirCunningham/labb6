@@ -46,12 +46,12 @@ public class Composite extends Component {
     }
 
     public Iterator<Component> iterator() {
-        Iterator<Component> iter = components.iterator();
+        Iterator<Component> iter = createDepthIterator();
         return iter;
     }
 
     public WidthIterator createWidthIterator() {
-        return new WidthIterator(components);
+        return new WidthIterator(this);
     }
 
     public DepthIterator createDepthIterator() {

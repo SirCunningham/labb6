@@ -4,14 +4,12 @@ import java.util.*;
 
 public class WidthIterator<Component> implements Iterator {
 
-    private LinkedList<Component> children;
     private Component parent;
     private int size;
     private Queue<Component> q;
 
     public WidthIterator(Component parent) {
         this.parent = parent;
-        this.size = children.size();
         q = new LinkedList<Component>();
         q.add(parent);
         q = createQueue(q);
@@ -45,11 +43,10 @@ public class WidthIterator<Component> implements Iterator {
                 tempChildren.addAll((LinkedList<Component>) comp.getChildren());
             }
         }
-        q = createQueue2(q, tempChildren);
-        return q;
+        return createQueue2(q, tempChildren);
     }
 
     public boolean hasNext() {
-        return !(q.size() == 1);
+        return !(q.size() == 1 || q.size()==0);
     }
 }

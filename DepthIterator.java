@@ -11,7 +11,6 @@ public class DepthIterator<Component> implements Iterator {
 
     public DepthIterator(Component parent) {
         this.parent = parent;
-        this.size = children.size();
         q = new LinkedList<Component>();
         q.add(parent);
         q=createQueue(q);
