@@ -46,6 +46,7 @@ public class Composite extends Component {
 
     public Iterator<Component> iterator() {
         Iterator<Component> iter = createDepthIterator();
+        //Iterator<Component> iter = createBreadthIterator();
         return iter;
     }
 
