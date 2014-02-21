@@ -7,7 +7,7 @@ public class BuilderList<E> implements List<E> {
 
     private List<E> addList = new LinkedList<E>();
     private List<E> getList = new ArrayList<E>();
-    private boolean needsUpdate = false;
+    private boolean needsUpdate = true;
 
     @Override
     public void add(int index, E element) {
@@ -130,9 +130,9 @@ public class BuilderList<E> implements List<E> {
     }
 
     public static void main(String[] args) {
-        test(250000, new BuilderList<String>());
-        test(250000, new LinkedList<String>());
-        test(250000, new ArrayList<String>());
+        test(125000, new BuilderList<String>());
+        test(125000, new LinkedList<String>());
+        test(125000, new ArrayList<String>());
     }
 
     public static void test(int n, List list) {
@@ -145,9 +145,10 @@ public class BuilderList<E> implements List<E> {
         long addTime = System.currentTimeMillis() - startDate;
         startDate = System.currentTimeMillis();
         for (int i = 0; i < n; i++) {
-            list.get(rand.nextInt(n - i));
+            list.get(rand.nextInt(n));
         }
         long getTime = System.currentTimeMillis() - startDate;
-        System.out.printf("%d + %d = %d\n", addTime, getTime, addTime + getTime);
+        System.out.printf("%s: %d + %d = %d\n", list.getClass().getSimpleName(),
+                addTime, getTime, addTime + getTime);
     }
 }
