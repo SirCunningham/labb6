@@ -4,7 +4,6 @@ import java.util.*;
 
 public class DepthIterator<Component> implements Iterator {
 
-    private LinkedList<Component> children;
     private Component parent;
     private int size;
     private Queue<Component> q;
@@ -14,6 +13,7 @@ public class DepthIterator<Component> implements Iterator {
         q = new LinkedList<Component>();
         q.add(parent);
         q = createQueue(q);
+
     }
 
     public void remove() {
@@ -34,22 +34,15 @@ public class DepthIterator<Component> implements Iterator {
     private Queue createQueue2(Queue<Component> q, LinkedList<Component> children) {
         for (Component child : children) {
             q.add(child);
-        }
-        //Spara barnen på samma rad i en lista
-        LinkedList<Component> tempChildren = new LinkedList<Component>();
-        for (Component child : children) {
             if (child instanceof Composite) {
                 Composite comp = (Composite) child;
-                tempChildren.addAll((LinkedList<Component>) comp.getChildren());
+                q=createQueue2(q, (LinkedList<Component>) comp.getChildren());
             }
         }
-        if (tempChildren.size()==0) {
-            return q;
-        }
-        return createQueue2(q, tempChildren);
+        return q;
     }
 
     public boolean hasNext() {
-        return  !(q.size()==0);
+        return !(q.size() == 0);
     }
 }
