@@ -13,7 +13,14 @@ public class DepthIterator <Component> implements Iterator {
     }
     
     public void remove() {
-        
+    }
+
+    public Component next() {
+        return null;
+    }
+
+    public boolean hasNext() {
+        return false;
     }
 
 }

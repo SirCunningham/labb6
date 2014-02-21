@@ -7,6 +7,7 @@ public class Composite extends Component {
     private String name;
     private double weight;
     private LinkedList<Component> components = new LinkedList<Component>();
+
     public Composite(String name, double weight) {
         this.name = name;
         this.weight = weight;
@@ -34,20 +35,24 @@ public class Composite extends Component {
         }
         return str;
     }
+
     public double getWeight() {
         double size = weight;
         for (Component component : components) {
-            size+=component.getWeight();
+            size += component.getWeight();
         }
         return size;
     }
+
     public Iterator<Component> iterator() {
         Iterator<Component> iter = components.iterator();
         return iter;
     }
+
     public WidthIterator createWidthIterator() {
         return new WidthIterator(components);
     }
+
     public DepthIterator createDepthIterator() {
         return new DepthIterator(components);
     }

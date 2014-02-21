@@ -11,11 +11,15 @@ public class WidthIterator<Component> implements Iterator {
         this.arrayList = arrayList;
         this.size = arrayList.size();
     }
-    
+
     public void remove() {
-        
     }
 
+    public Component next() {
+        return null;
+    }
 
-    
+    public boolean hasNext() {
+        return false;
+    }
 }

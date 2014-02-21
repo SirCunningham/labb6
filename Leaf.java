@@ -25,15 +25,19 @@ public class Leaf extends Component {
     public String toString() {
         return "en " + name + " ";
     }
+
     public double getWeight() {
         return weight;
     }
+
     public Iterator<Component> iterator() {
         return null;
     }
+
     public DepthIterator createDepthIterator() {
         return null;
     }
+
     public WidthIterator createWidthIterator() {
         return null;
     }

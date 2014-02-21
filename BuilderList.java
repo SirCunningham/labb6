@@ -4,7 +4,7 @@ import java.util.*;
 import java.util.Random.*;
 
 public class BuilderList<E> implements List<E> {
-    
+
     private List<E> addList = new LinkedList<E>();
     private List<E> getList = new ArrayList<E>();
     private boolean isLinked = true;
@@ -18,7 +18,7 @@ public class BuilderList<E> implements List<E> {
         }
         addList.add(index, element);
     }
-   
+
     @Override
     public E get(int index) {
         if (isLinked) {
@@ -28,7 +28,7 @@ public class BuilderList<E> implements List<E> {
         E element = getList.get(index);
         return element;
     }
-    
+
     @Override
     public int size() {
         throw new UnsupportedOperationException("Not supported yet.");
@@ -133,7 +133,7 @@ public class BuilderList<E> implements List<E> {
     public List<E> subList(int fromIndex, int toIndex) {
         throw new UnsupportedOperationException("Not supported yet.");
     }
-    
+
     public long test(int n, List list) {
         long startTime = System.currentTimeMillis();
         for (int i = 0; i < n; i++) {
@@ -156,4 +156,3 @@ public class BuilderList<E> implements List<E> {
         System.out.println(myBuilderList.test(500000, myArrayList));
     }
 }
-
