@@ -1,4 +1,4 @@
-package labb6;
+package labb6.composite;
 
 import java.util.*;
 

@@ -1,1 +1,0 @@
-package labb6;
