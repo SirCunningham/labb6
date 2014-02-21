@@ -13,13 +13,13 @@ public class DepthIterator<Component> implements Iterator {
         this.parent = parent;
         q = new LinkedList<Component>();
         q.add(parent);
-        q=createQueue(q);
-
+        q = createQueue(q);
     }
 
     public void remove() {
     }
-    public Component next() {  
+
+    public Component next() {
         return q.poll();
     }
 
@@ -43,11 +43,13 @@ public class DepthIterator<Component> implements Iterator {
                 tempChildren.addAll((LinkedList<Component>) comp.getChildren());
             }
         }
-        q = createQueue2(q, tempChildren);
-        return q;
+        if (tempChildren.size()==0) {
+            return q;
+        }
+        return createQueue2(q, tempChildren);
     }
 
     public boolean hasNext() {
-        return !(q.size()==1);
+        return !(q.size() == 1);
     }
 }

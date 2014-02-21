@@ -25,7 +25,6 @@ public class Composite extends Component {
         return components;
     }
 
-
     public String toString() {
         String str = "en " + name + ", som innehåller ";
         for (int i = 0; i < components.size(); i++) {
