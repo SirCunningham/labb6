@@ -1,4 +1,4 @@
-package labb6;
+package labb6.composite;
 
 import java.util.*;
 
@@ -38,7 +38,7 @@ public class Leaf extends Component {
         return null;
     }
 
-    public WidthIterator createWidthIterator() {
+    public BreadthIterator createWidthIterator() {
         return null;
     }
 }

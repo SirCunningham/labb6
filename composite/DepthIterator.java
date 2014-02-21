@@ -1,4 +1,4 @@
-package labb6;
+package labb6.composite;
 
 import java.util.*;
 
@@ -50,6 +50,6 @@ public class DepthIterator<Component> implements Iterator {
     }
 
     public boolean hasNext() {
-        return !(q.size() == 1);
+        return  !(q.size()==0);
     }
 }

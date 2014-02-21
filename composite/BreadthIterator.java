@@ -1,14 +1,14 @@
-package labb6;
+package labb6.composite;
 
 import java.util.*;
 
-public class WidthIterator<Component> implements Iterator {
+public class BreadthIterator<Component> implements Iterator {
 
     private Component parent;
     private int size;
     private Queue<Component> q;
 
-    public WidthIterator(Component parent) {
+    public BreadthIterator(Component parent) {
         this.parent = parent;
         q = new LinkedList<Component>();
         q.add(parent);
