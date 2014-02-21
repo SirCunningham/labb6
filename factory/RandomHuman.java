@@ -1,4 +1,4 @@
-package labb1;
+package labb6.factory;
 
 public class RandomHuman {
 

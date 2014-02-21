@@ -1,4 +1,4 @@
-package labb6;
+package labb6.builder;
 
 import java.util.*;
 import java.util.Random.*;
