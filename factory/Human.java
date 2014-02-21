@@ -1,6 +1,6 @@
 package labb6.factory;
 
-public class Human implements Comparable<Human> {
+public abstract class Human implements Comparable<Human> {
 
     private int age;
     private String name;
