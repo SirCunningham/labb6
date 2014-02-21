@@ -55,6 +55,6 @@ public class Composite extends Component {
     }
 
     public DepthIterator createDepthIterator() {
-        return new DepthIterator(components);
+        return new DepthIterator(this);
     }
 }
