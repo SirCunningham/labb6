@@ -21,8 +21,8 @@ public class Composite extends Component {
         components.remove(component);
     }
 
-    public Component getChild(int level) {
-        return components.get(level);
+    public LinkedList<Component> getChildren() {
+        return components;
     }
 
 

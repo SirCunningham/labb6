@@ -19,6 +19,7 @@ public class DepthIterator<Component> implements Iterator {
         if (children.size()==1) {
             if (children.getFirst() instanceof Composite) {
                 Composite comp = (Composite) children.getFirst();
+                next(comp.)
             }
         }
         return null;

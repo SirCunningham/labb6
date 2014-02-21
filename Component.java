@@ -8,7 +8,7 @@ public abstract class Component implements Iterable<Component> {
 
     public abstract void remove(Component component);
 
-    public abstract Component getChild(int level);
+    public abstract LinkedList<Component> getChildren();
 
     public abstract double getWeight();
 
