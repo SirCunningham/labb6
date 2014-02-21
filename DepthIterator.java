@@ -49,6 +49,6 @@ public class DepthIterator<Component> implements Iterator {
     }
 
     public boolean hasNext() {
-        return false;
+        return !(q.size()==1);
     }
 }
