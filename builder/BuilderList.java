@@ -7,26 +7,21 @@ public class BuilderList<E> implements List<E> {
 
     private List<E> addList = new LinkedList<E>();
     private List<E> getList = new ArrayList<E>();
-    private boolean isLinked = true;
-    private Random rand = new Random();
+    private boolean needsUpdate = true;
 
     @Override
     public void add(int index, E element) {
-        if (!isLinked) {
-            addList = new LinkedList<E>(getList);
-            isLinked = true;
-        }
         addList.add(index, element);
+        needsUpdate = true;
     }
 
     @Override
     public E get(int index) {
-        if (isLinked) {
+        if (needsUpdate) {
             getList = new ArrayList<E>(addList);
-            isLinked = false;
+            needsUpdate = false;
         }
-        E element = getList.get(index);
-        return element;
+        return getList.get(index);
     }
 
     @Override
@@ -134,25 +129,26 @@ public class BuilderList<E> implements List<E> {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
-    public long test(int n, List list) {
-        long startTime = System.currentTimeMillis();
+    public static void main(String[] args) {
+        test(125000, new BuilderList<String>());
+        test(125000, new LinkedList<String>());
+        test(125000, new ArrayList<String>());
+    }
+
+    public static void test(int n, List list) {
+        Random rand = new Random();
+        long startDate = System.currentTimeMillis();
         for (int i = 0; i < n; i++) {
             //list.add(rand.nextInt(i + 1), "Some text");
             list.add(0, "Some text");
         }
+        long addTime = System.currentTimeMillis() - startDate;
+        startDate = System.currentTimeMillis();
         for (int i = 0; i < n; i++) {
-            list.get(rand.nextInt(n - i));
+            list.get(rand.nextInt(n));
         }
-        long endTime = System.currentTimeMillis();
-        return endTime - startTime;
-    }
-
-    public static void main(String[] args) {
-        BuilderList<String> myBuilderList = new BuilderList<String>();
-        LinkedList<String> myLinkedList = new LinkedList<String>();
-        ArrayList<String> myArrayList = new ArrayList<String>();
-        System.out.println(myBuilderList.test(500000, myBuilderList));
-        System.out.println(myBuilderList.test(500000, myLinkedList));
-        System.out.println(myBuilderList.test(500000, myArrayList));
+        long getTime = System.currentTimeMillis() - startDate;
+        System.out.printf("%s: %d + %d = %d\n", list.getClass().getSimpleName(),
+                addTime, getTime, addTime + getTime);
     }
 }
