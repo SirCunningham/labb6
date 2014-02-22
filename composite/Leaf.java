@@ -5,10 +5,12 @@ import java.util.*;
 public class Leaf extends Component implements Cloneable {
 
     String name;
+    String genus;
     double weight;
 
-    public Leaf(String name, double weight) {
+    public Leaf(String name, String genus, double weight) {
         this.name = name;
+        this.genus = genus;
         this.weight = weight;
     }
 
@@ -27,12 +29,16 @@ public class Leaf extends Component implements Cloneable {
 
     @Override
     public String toString() {
-        return "en " + name + " ";
+        return genus + " " + name + " ";
     }
 
     @Override
     public String getName() {
         return name;
+    }
+    
+    public String getGenus() {
+        return genus;
     }
 
     @Override
@@ -62,6 +68,6 @@ public class Leaf extends Component implements Cloneable {
 
     @Override
     public Component clone() {
-        return new Leaf(name, weight);
+        return new Leaf(name, genus, weight);
     }
 }

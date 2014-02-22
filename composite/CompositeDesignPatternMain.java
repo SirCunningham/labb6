@@ -3,12 +3,12 @@ package labb6.composite;
 public class CompositeDesignPatternMain {
 
     public static void main(String[] args) {
-        Component hair = new Leaf("hårspänne", 1);
-        Component toiletBag = new Composite("necessär", 1);
-        Component bag = new Composite("påse", 1);
-        Component soap = new Composite("tvål", 1);
-        Component test = new Leaf("Test", 1);
-        Component water = new Leaf("Water", 1);
+        Component hair = new Leaf("hårspänne", "ett", 1);
+        Component toiletBag = new Composite("necessär", "en", 1);
+        Component bag = new Composite("påse", "en", 1);
+        Component soap = new Composite("tvål", "en", 1);
+        Component test = new Leaf("test", "ett", 1);
+        Component water = new Leaf("vatten", "ett", 1);
         soap.add(water);
         bag.add(hair);
         toiletBag.add(bag);

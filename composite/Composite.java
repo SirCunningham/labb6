@@ -5,11 +5,13 @@ import java.util.*;
 public class Composite extends Component implements Cloneable {
 
     private String name;
+    private String genus;
     private double weight;
     private LinkedList<Component> components = new LinkedList<Component>();
 
-    public Composite(String name, double weight) {
+    public Composite(String name, String genus, double weight) {
         this.name = name;
+        this.genus = genus;
         this.weight = weight;
     }
 
@@ -49,6 +51,10 @@ public class Composite extends Component implements Cloneable {
     public String getName() {
         return name;
     }
+    
+    public String getGenus() {
+        return genus;
+    }
 
     @Override
     public double getTotalWeight() {
@@ -78,13 +84,13 @@ public class Composite extends Component implements Cloneable {
 
     @Override
     public Component clone() {
-        Composite compositeClone = new Composite(name, weight);
+        Composite compositeClone = new Composite(name, genus, weight);
         for (Component comp : components) {
             if (comp instanceof Composite) {
                 Composite compCopy = (Composite) comp.clone();
                 compositeClone.add(compCopy);
             } else {
-                Leaf leafCopy = new Leaf(comp.getName(), comp.getTotalWeight());
+                Leaf leafCopy = new Leaf(comp.getName(), comp.getGenus(), comp.getTotalWeight());
                 compositeClone.add(leafCopy);
             }
         }

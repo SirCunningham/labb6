@@ -10,7 +10,6 @@ public class BreadthIterator<Component> implements Iterator {
         q = new LinkedList<Component>();
         q.add(parent);
         q = createQueue(q);
-
     }
 
     @Override

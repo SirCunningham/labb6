@@ -10,7 +10,6 @@ public class DepthIterator<Component> implements Iterator {
         q = new LinkedList<Component>();
         q.add(parent);
         q = createQueue(q);
-
     }
 
     @Override

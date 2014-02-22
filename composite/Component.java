@@ -22,4 +22,6 @@ public abstract class Component implements Iterable<Component>, Cloneable {
     public abstract double getWeight();
 
     public abstract String getName();
+    
+    public abstract String getGenus();
 }
