@@ -2,7 +2,7 @@ package labb6.composite;
 
 import java.util.*;
 
-public abstract class Component implements Iterable<Component> {
+public abstract class Component implements Iterable<Component>, Cloneable{
     
     public abstract void add(Component component);
     
@@ -10,9 +10,16 @@ public abstract class Component implements Iterable<Component> {
     
     public abstract LinkedList<Component> getChildren();
     
-    public abstract double getWeight();
+    public abstract double getTotalWeight();
     
     public abstract BreadthIterator createBreadthIterator();
     
     public abstract DepthIterator createDepthIterator();
+    
+    public abstract Component clone();
+    
+    public abstract double getWeight();
+    
+    public abstract String getName();
+
 }

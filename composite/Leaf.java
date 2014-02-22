@@ -2,7 +2,7 @@ package labb6.composite;
 
 import java.util.*;
 
-public class Leaf extends Component {
+public class Leaf extends Component implements Cloneable {
 
     String name;
     double weight;
@@ -25,7 +25,13 @@ public class Leaf extends Component {
     public String toString() {
         return "en " + name + " ";
     }
+    public String getName() {
+        return name;
+    }
 
+    public double getTotalWeight() {
+        return weight;
+    }
     public double getWeight() {
         return weight;
     }
@@ -40,5 +46,9 @@ public class Leaf extends Component {
 
     public BreadthIterator createBreadthIterator() {
         return null;
+    }
+
+    public Component clone() {
+        return new Leaf(name,weight);
     }
 }

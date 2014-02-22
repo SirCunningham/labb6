@@ -1,8 +1,10 @@
 package labb6.composite;
 
 import java.util.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
-public class Composite extends Component {
+public class Composite extends Component implements Cloneable {
 
     private String name;
     private double weight;
@@ -24,6 +26,8 @@ public class Composite extends Component {
     public LinkedList<Component> getChildren() {
         return components;
     }
+    
+
 
     public String toString() {
         String str = "en " + name + ", som innehåller ";
@@ -35,11 +39,17 @@ public class Composite extends Component {
         }
         return str;
     }
-
     public double getWeight() {
+        return weight;
+    }
+    public String getName() {
+        return name;
+    }
+
+    public double getTotalWeight() {
         double size = weight;
         for (Component component : components) {
-            size += component.getWeight();
+            size += component.getTotalWeight();
         }
         return size;
     }
@@ -56,5 +66,18 @@ public class Composite extends Component {
 
     public DepthIterator createDepthIterator() {
         return new DepthIterator(this);
+    }
+    public Component clone() {
+        Composite compositeClone = new Composite(name,weight);
+        for (Component comp : components) {
+            if (comp instanceof Composite) {
+                Composite compCopy = (Composite) comp.clone();
+                compositeClone.add(compCopy);
+            } else {
+                Leaf leafCopy = new Leaf(comp.getName(), comp.getTotalWeight());
+                compositeClone.add(leafCopy);
+            }
+        }
+        return compositeClone;
     }
 }
