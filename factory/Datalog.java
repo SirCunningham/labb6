@@ -30,6 +30,7 @@ public class Datalog extends Human {
         }
     }
 
+    @Override
     public String toString() {
         return String.format("%s, började data F%s", super.toString(),
                 String.valueOf(year).substring(2, 4));

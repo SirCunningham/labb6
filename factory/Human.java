@@ -24,10 +24,12 @@ public abstract class Human implements Comparable<Human> {
                 nameArray[(int) (Math.random() * nameArray.length)]);
     }
 
+    @Override
     public String toString() {
-        return String.format("namn: %s, ålder: %d år", name, age);
+        return String.format("%s, ålder %d år", name, age);
     }
 
+    @Override
     public int compareTo(Human hum) {
         return age - hum.getAge();
     }
@@ -42,5 +44,18 @@ public abstract class Human implements Comparable<Human> {
 
     public String getName() {
         return name;
+    }
+
+    public static Human create(String name, String year, int age) {
+        String type = year.substring(0, 1);
+        int newYear = Integer.parseInt(year.substring(1));
+        if ("F".equals(type)) {
+            return new Fysiker(age, name, newYear);
+        } else if ("D".equals(type)) {
+            return new Datalog(age, name, newYear);
+        } else {
+            return new Human(age, name) {
+            };
+        }
     }
 }
