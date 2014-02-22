@@ -5,12 +5,10 @@ import java.util.*;
 public class Leaf extends Component implements Cloneable {
 
     private String name;
-    private String gender;
     private double weight;
 
-    public Leaf(String name, String gender, double weight) {
+    public Leaf(String name, double weight) {
         this.name = name;
-        this.gender = gender;
         this.weight = weight;
     }
 
@@ -29,17 +27,12 @@ public class Leaf extends Component implements Cloneable {
 
     @Override
     public String toString() {
-        return String.format("%s %s ", gender, name);
+        return String.format("%s ", name);
     }
 
     @Override
     public String getName() {
         return name;
-    }
-
-    @Override
-    public String getGender() {
-        return gender;
     }
 
     @Override
@@ -69,6 +62,6 @@ public class Leaf extends Component implements Cloneable {
 
     @Override
     public Component clone() {
-        return new Leaf(name, gender, weight);
+        return new Leaf(name, weight);
     }
 }
