@@ -4,21 +4,20 @@ import java.util.*;
 
 public class DepthIterator<Component> implements Iterator {
 
-    private Component parent;
-    private int size;
     private Queue<Component> q;
 
     public DepthIterator(Component parent) {
-        this.parent = parent;
         q = new LinkedList<Component>();
         q.add(parent);
         q = createQueue(q);
 
     }
 
+    @Override
     public void remove() {
     }
 
+    @Override
     public Component next() {
         return q.poll();
     }
@@ -36,12 +35,13 @@ public class DepthIterator<Component> implements Iterator {
             q.add(child);
             if (child instanceof Composite) {
                 Composite comp = (Composite) child;
-                q=createQueue2(q, (LinkedList<Component>) comp.getChildren());
+                q = createQueue2(q, (LinkedList<Component>) comp.getChildren());
             }
         }
         return q;
     }
 
+    @Override
     public boolean hasNext() {
         return !(q.size() == 0);
     }

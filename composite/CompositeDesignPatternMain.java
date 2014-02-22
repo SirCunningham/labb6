@@ -1,10 +1,7 @@
 package labb6.composite;
 
-import java.util.logging.Level;
-import java.util.logging.Logger;
-
 public class CompositeDesignPatternMain {
-    
+
     public static void main(String[] args) {
         Component hair = new Leaf("hårspänne", 1);
         Component toiletBag = new Composite("necessär", 1);
@@ -17,7 +14,7 @@ public class CompositeDesignPatternMain {
         toiletBag.add(bag);
         toiletBag.add(soap);
         toiletBag.add(test);
-        
+
         Composite clo = (Composite) toiletBag.clone();
         System.out.println(clo.equals(toiletBag));
         System.out.println(toiletBag);
@@ -27,8 +24,6 @@ public class CompositeDesignPatternMain {
         System.out.println(toiletBag);
         System.out.println(toiletBag.getTotalWeight());
         
-
-
         //WidthIterator iter = toiletBag.createWidthIterator();
         for (Component comp : toiletBag) {
             System.out.println(comp);

@@ -4,21 +4,20 @@ import java.util.*;
 
 public class BreadthIterator<Component> implements Iterator {
 
-    private Component parent;
-    private int size;
     private Queue<Component> q;
 
     public BreadthIterator(Component parent) {
-        this.parent = parent;
         q = new LinkedList<Component>();
         q.add(parent);
         q = createQueue(q);
 
     }
 
+    @Override
     public void remove() {
     }
 
+    @Override
     public Component next() {
         return q.poll();
     }
@@ -43,13 +42,14 @@ public class BreadthIterator<Component> implements Iterator {
                 tempChildren.addAll((LinkedList<Component>) comp.getChildren());
             }
         }
-        if (tempChildren.size()==0) {
+        if (tempChildren.size() == 0) {
             return q;
         }
         return createQueue2(q, tempChildren);
     }
 
+    @Override
     public boolean hasNext() {
-        return !(q.size()==0);
+        return !(q.size() == 0);
     }
 }

@@ -1,8 +1,6 @@
 package labb6.composite;
 
 import java.util.*;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 public class Composite extends Component implements Cloneable {
 
@@ -15,20 +13,22 @@ public class Composite extends Component implements Cloneable {
         this.weight = weight;
     }
 
+    @Override
     public void add(Component component) {
         components.add(component);
     }
 
+    @Override
     public void remove(Component component) {
         components.remove(component);
     }
 
+    @Override
     public LinkedList<Component> getChildren() {
         return components;
     }
-    
 
-
+    @Override
     public String toString() {
         String str = "en " + name + ", som innehåller ";
         for (int i = 0; i < components.size(); i++) {
@@ -39,13 +39,18 @@ public class Composite extends Component implements Cloneable {
         }
         return str;
     }
+
+    @Override
     public double getWeight() {
         return weight;
     }
+
+    @Override
     public String getName() {
         return name;
     }
 
+    @Override
     public double getTotalWeight() {
         double size = weight;
         for (Component component : components) {
@@ -54,21 +59,26 @@ public class Composite extends Component implements Cloneable {
         return size;
     }
 
+    @Override
     public Iterator<Component> iterator() {
         Iterator<Component> iter = createDepthIterator();
         //Iterator<Component> iter = createBreadthIterator();
         return iter;
     }
 
+    @Override
     public BreadthIterator createBreadthIterator() {
         return new BreadthIterator(this);
     }
 
+    @Override
     public DepthIterator createDepthIterator() {
         return new DepthIterator(this);
     }
+
+    @Override
     public Component clone() {
-        Composite compositeClone = new Composite(name,weight);
+        Composite compositeClone = new Composite(name, weight);
         for (Component comp : components) {
             if (comp instanceof Composite) {
                 Composite compCopy = (Composite) comp.clone();
