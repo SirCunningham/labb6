@@ -32,7 +32,7 @@ public class Datalog extends Human {
 
     @Override
     public String toString() {
-        return String.format("%s, började data F%s", super.toString(),
+        return String.format("%s, började data D%s", super.toString(),
                 String.valueOf(year).substring(2, 4));
     }
 
@@ -40,11 +40,11 @@ public class Datalog extends Human {
         return year;
     }
 
-    public int compareTo(Fysiker fys) {
-        if (getAge() == fys.getAge()) {
-            return year - fys.getYear();
+    public int compareTo(Datalog dat) {
+        if (getAge() == dat.getAge()) {
+            return year - dat.getYear();
         } else {
-            return getAge() - fys.getAge();
+            return getAge() - dat.getAge();
         }
     }
 }
