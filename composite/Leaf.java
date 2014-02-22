@@ -4,13 +4,13 @@ import java.util.*;
 
 public class Leaf extends Component implements Cloneable {
 
-    String name;
-    String genus;
-    double weight;
+    private String name;
+    private String gender;
+    private double weight;
 
-    public Leaf(String name, String genus, double weight) {
+    public Leaf(String name, String gender, double weight) {
         this.name = name;
-        this.genus = genus;
+        this.gender = gender;
         this.weight = weight;
     }
 
@@ -29,16 +29,17 @@ public class Leaf extends Component implements Cloneable {
 
     @Override
     public String toString() {
-        return genus + " " + name + " ";
+        return String.format("%s %s ", gender, name);
     }
 
     @Override
     public String getName() {
         return name;
     }
-    
-    public String getGenus() {
-        return genus;
+
+    @Override
+    public String getGender() {
+        return gender;
     }
 
     @Override
@@ -68,6 +69,6 @@ public class Leaf extends Component implements Cloneable {
 
     @Override
     public Component clone() {
-        return new Leaf(name, genus, weight);
+        return new Leaf(name, gender, weight);
     }
 }
