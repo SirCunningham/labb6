@@ -4,9 +4,9 @@ import java.util.*;
 
 public class Composite extends Component implements Cloneable {
 
-    private String name;
-    private double weight;
-    private LinkedList<Component> components = new LinkedList<Component>();
+    private final String name;
+    private final double weight;
+    private final LinkedList<Component> components = new LinkedList<Component>();
 
     public Composite(String name, double weight) {
         this.name = name;

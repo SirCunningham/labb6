@@ -4,8 +4,8 @@ import java.util.*;
 
 public class Leaf extends Component implements Cloneable {
 
-    private String name;
-    private double weight;
+    private final String name;
+    private final double weight;
 
     public Leaf(String name, double weight) {
         this.name = name;
