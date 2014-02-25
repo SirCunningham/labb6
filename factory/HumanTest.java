@@ -1,12 +1,12 @@
 package labb6.factory;
 
-public class HumanApp {
+public class HumanTest {
 
     public static void main(String[] args) {
         try {
             System.out.println(Human.create("Anna", "D11", 21));
             System.out.println(Human.create("Quisling", "F99", 33));
-        } catch (Exception e) {
+        } catch (TooLateException | TooSoonException | TooYoungException | UndefinedTypeException e) {
             System.err.println("Något gick tyvärr fel.");
             e.printStackTrace();
         }
