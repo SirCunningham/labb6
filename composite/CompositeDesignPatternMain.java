@@ -30,7 +30,7 @@ public class CompositeDesignPatternMain {
         }
         System.out.println("------copy--------");
         Component travelBagCopy = travelBag.clone();
-        System.out.println(travelBagCopy);
+        System.out.println(format(travelBagCopy));
         for (Component comp : travelBag) {
             for (Component compCopy : travelBagCopy) {
                 if (comp.equals(compCopy)) {
