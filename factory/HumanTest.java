@@ -1,8 +1,5 @@
 package labb6.factory;
 
-import java.util.logging.Level;
-import java.util.logging.Logger;
-
 public class HumanTest {
 
     public static void main(String[] args) {
@@ -10,22 +7,9 @@ public class HumanTest {
         try {
             System.out.println(Human.create("Quisling", "F99", 33));
             System.out.println(Human.create("Anna", "D11", 21));
-        } catch (TooLateException ex) {
-            Logger.getLogger(HumanTest.class.getName()).log(Level.SEVERE, null, ex);
-            System.err.println("Något gick tyvärr fel.");
-            ex.printStackTrace();
-        } catch (TooSoonException ex) {
-            Logger.getLogger(HumanTest.class.getName()).log(Level.SEVERE, null, ex);
-            System.err.println("Något gick tyvärr fel.");
-            ex.printStackTrace();
-        } catch (TooYoungException ex) {
-            Logger.getLogger(HumanTest.class.getName()).log(Level.SEVERE, null, ex);
-            System.err.println("Något gick tyvärr fel.");
-            ex.printStackTrace();
-        } catch (UndefinedTypeException ex) {
-            Logger.getLogger(HumanTest.class.getName()).log(Level.SEVERE, null, ex);
-            System.err.println("Något gick tyvärr fel.");
-            ex.printStackTrace();
+        } catch (TooLateException | TooSoonException | TooYoungException | UndefinedTypeException e) {
+            System.err.println("Kan inte skapa objekt med dessa parametrar.");
+            e.printStackTrace();
         }
 
         try {
