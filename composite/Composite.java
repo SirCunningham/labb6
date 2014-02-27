@@ -63,8 +63,8 @@ public class Composite extends Component implements Cloneable {
 
     @Override
     public Iterator<Component> iterator() {
-        Iterator<Component> iter = createDepthIterator();
-        //Iterator<Component> iter = createBreadthIterator();
+        //Iterator<Component> iter = createDepthIterator();
+        Iterator<Component> iter = createBreadthIterator();
         return iter;
     }
 
