@@ -1,4 +1,4 @@
-package labb6.composite;
+ package labb6.composite;
 
 import java.util.*;
 
@@ -16,6 +16,7 @@ public abstract class Component implements Iterable<Component>, Cloneable{
     
     public abstract DepthIterator createDepthIterator();
     
+    @Override
     public abstract Component clone();
     
     public abstract double getWeight();
