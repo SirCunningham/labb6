@@ -7,7 +7,7 @@ public class BreadthIterator<Component> implements Iterator {
     private Queue<Component> q;
 
     public BreadthIterator(Component parent) {
-        q = new LinkedList<Component>();
+        q = new LinkedList<>();
         q.add(parent);
         q = createQueue(q);
     }
@@ -34,7 +34,7 @@ public class BreadthIterator<Component> implements Iterator {
             q.add(child);
         }
         //Spara barnen på samma rad i en lista
-        LinkedList<Component> tempChildren = new LinkedList<Component>();
+        LinkedList<Component> tempChildren = new LinkedList<>();
         for (Component child : children) {
             if (child instanceof Composite) {
                 Composite comp = (Composite) child;
