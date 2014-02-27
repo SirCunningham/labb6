@@ -2,7 +2,7 @@ package labb6.composite;
 
 import java.util.*;
 
-public class Composite extends Component implements Cloneable {
+public class Composite extends Component {
 
     private final String name;
     private final double weight;
