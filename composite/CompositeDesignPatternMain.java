@@ -3,7 +3,7 @@ package labb6.composite;
 public class CompositeDesignPatternMain {
 
     public static void main(String[] args) {
-        Component travelBag = new Composite("En resväska", 2);
+        Component travelBag = new Composite("en resväska", 2);
         Component bag = new Composite("en påse", 0.1);
         Component pencilBox = new Composite("ett pennskrin", 0.3);
         Component pants = new Leaf("en byxa", 0.4);
@@ -23,10 +23,11 @@ public class CompositeDesignPatternMain {
         pencilBox.add(pencil);
         pencilBox.add(eraser);
         pencilBox.add(lead);
-        System.out.println(travelBag);
+        System.out.println(format(travelBag));
     }
 
-    public static String format(String str) {
+    public static String format(Component comp) {
+        String str = comp.toString();
         return str.substring(0, 1).toUpperCase()
                 + str.substring(1, str.length() - 2) + ".";
     }
