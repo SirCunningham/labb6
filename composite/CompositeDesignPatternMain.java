@@ -13,7 +13,7 @@ public class CompositeDesignPatternMain {
         Component pencil = new Leaf("en penna", 0.05);
         Component eraser = new Leaf("ett suddigum", 0.1);
         Component lead = new Leaf("stift", 0.01);
-        
+
         travelBag.add(bag);
         travelBag.add(pencilBox);
         travelBag.add(pants);
@@ -24,6 +24,15 @@ public class CompositeDesignPatternMain {
         pencilBox.add(eraser);
         pencilBox.add(lead);
         System.out.println(format(travelBag));
+        System.out.println("--------------");
+        for (Component comp : travelBag) {
+            System.out.println(comp);
+        }
+        System.out.println("------copy--------");
+        Component travelBagCopy = travelBag.clone();
+        System.out.println(travelBagCopy);
+        
+        
     }
 
     public static String format(Component comp) {
