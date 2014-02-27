@@ -23,21 +23,18 @@ public class CompositeDesignPatternMain {
         /*
         System.out.println(toiletBag);
         System.out.println(toiletBag.getTotalWeight());
-         * *
+         * 
          */
         
-<<<<<<< HEAD
         for (Component clon : toiletBag) {
             System.out.println(clon);
         }
 
-=======
         //WidthIterator iter = toiletBag.createWidthIterator();
         for (Component comp : toiletBag) {
             System.out.println(comp);
         }
-         */
->>>>>>> 1747ac8b439a4d75ecd6060d8539da975f8e6669
+
     }
 
     public static String format(String str) {
