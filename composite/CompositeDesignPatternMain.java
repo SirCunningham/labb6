@@ -3,7 +3,7 @@ package labb6.composite;
 public class CompositeDesignPatternMain {
 
     public static void main(String[] args) {
-        Component travelBag = new Composite("En resväska", 2);
+        Component travelBag = new Composite("en resväska", 2);
         Component bag = new Composite("en påse", 0.1);
         Component pencilBox = new Composite("ett pennskrin", 0.3);
         Component pants = new Leaf("en byxa", 0.4);
