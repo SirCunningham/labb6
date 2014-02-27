@@ -1,4 +1,4 @@
- package labb6.composite;
+package labb6.composite;
 
 import java.util.*;
 
@@ -9,6 +9,10 @@ public abstract class Component implements Iterable<Component>, Cloneable {
     public abstract void remove(Component component);
 
     public abstract LinkedList<Component> getChildren();
+    
+    public abstract String getName();
+    
+    public abstract double getWeight();
 
     public abstract double getTotalWeight();
 
@@ -18,8 +22,4 @@ public abstract class Component implements Iterable<Component>, Cloneable {
 
     @Override
     public abstract Component clone();
-
-    public abstract double getWeight();
-
-    public abstract String getName();
 }

@@ -6,7 +6,7 @@ public class Composite extends Component implements Cloneable {
 
     private final String name;
     private final double weight;
-    private final LinkedList<Component> components = new LinkedList<Component>();
+    private final LinkedList<Component> components = new LinkedList<>();
 
     public Composite(String name, double weight) {
         this.name = name;
