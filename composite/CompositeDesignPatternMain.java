@@ -23,10 +23,11 @@ public class CompositeDesignPatternMain {
         pencilBox.add(pencil);
         pencilBox.add(eraser);
         pencilBox.add(lead);
-        System.out.println(travelBag);
+        System.out.println(format(travelBag));
     }
 
-    public static String format(String str) {
+    public static String format(Component comp) {
+        String str = comp.toString();
         return str.substring(0, 1).toUpperCase()
                 + str.substring(1, str.length() - 2) + ".";
     }
