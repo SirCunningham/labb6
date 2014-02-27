@@ -1,6 +1,6 @@
 package labb6.composite;
 
-public class CompositeDesignPatternMain {
+public class Main {
 
     public static void main(String[] args) {
         Component travelBag = new Composite("en resväska", 2);
@@ -23,14 +23,14 @@ public class CompositeDesignPatternMain {
         pencilBox.add(pencil);
         pencilBox.add(eraser);
         pencilBox.add(lead);
-        System.out.println(format(travelBag));
+        printComponent(travelBag);
         System.out.println("--------------");
         for (Component comp : travelBag) {
             System.out.println(comp);
         }
         System.out.println("------copy--------");
         Component travelBagCopy = travelBag.clone();
-        System.out.println(format(travelBagCopy));
+        printComponent(travelBagCopy);
         for (Component comp : travelBag) {
             for (Component compCopy : travelBagCopy) {
                 if (comp.equals(compCopy)) {
@@ -41,9 +41,9 @@ public class CompositeDesignPatternMain {
         
     }
 
-    public static String format(Component comp) {
-        String str = comp.toString();
-        return str.substring(0, 1).toUpperCase()
-                + str.substring(1, str.length() - 2) + ".";
+    public static void printComponent(Component component) {
+        String str = component.toString();
+        System.out.println(str.substring(0, 1).toUpperCase()
+                + str.substring(1, str.length() - 2) + ".");
     }
 }
