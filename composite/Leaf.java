@@ -2,7 +2,7 @@ package labb6.composite;
 
 import java.util.*;
 
-public class Leaf extends Component implements Cloneable {
+public class Leaf extends Component {
 
     private final String name;
     private final double weight;
