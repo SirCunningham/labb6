@@ -2,36 +2,55 @@ package labb6.factory;
 
 public abstract class Human implements Comparable<Human> {
 
-    private int age;
     private String name;
-    private static String[] nameArray = {"Albert", "Bertil", "Cecilia",
-        "Dennis", "Emma", "Ferdninand", "Gunilla", "Hilbert", "Ivar", "Joakim",
-        "Klara", "Lena", "Martin", "Niklas", "Olle", "Petra", "Quisling",
-        "Robert", "Sandra", "Tove", "Ulla", "Viktor", "Willam", "Xavier",
-        "Yngve", "Zack", "Åke", "Ängla", "Örjan"};
+    private int year;
+    private int age;
 
-    public Human(int age, String name) {
-        this.age = age;
+    private Human(String name, int year, int age)
+            throws TooLateException, TooSoonException, TooYoungException {
         this.name = name;
-    }
-
-    public Human(String name, int age) {
-        this(age, name);
-    }
-
-    public Human() {
-        this((int) (Math.random() * 100),
-                nameArray[(int) (Math.random() * nameArray.length)]);
+        if (year < 1932) {
+            throw new TooLateException();
+        } else if (year > 2014) {
+            throw new TooSoonException();
+        } else {
+            this.year = year;
+        }
+        if (age < 15 + 2014 - year) {
+            throw new TooYoungException();
+        } else {
+            this.age = age;
+        }
     }
 
     @Override
     public String toString() {
-        return String.format("%s, ålder %d år", name, age);
+        return String.format("%s, ålder %d år, började %d", name, age, year);
     }
 
     @Override
     public int compareTo(Human hum) {
-        return age - hum.getAge();
+        if (age == hum.getAge()) {
+            return year - hum.getYear();
+        } else {
+            return age - hum.getAge();
+        }
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getYear() {
+        return year;
+    }
+
+    public void setYear(int year) {
+        this.year = year;
     }
 
     public int getAge() {
@@ -42,20 +61,52 @@ public abstract class Human implements Comparable<Human> {
         this.age = age;
     }
 
-    public String getName() {
-        return name;
-    }
+    public static Human create(String name, String year, int age)
+            throws TooLateException, TooSoonException, TooYoungException,
+            UndefinedTypeException {
 
-    public static Human create(String name, String year, int age) {
+        class Fysiker extends Human {
+
+            private Fysiker(String name, int year, int age)
+                    throws TooLateException, TooSoonException, TooYoungException {
+                super(name, year, age);
+            }
+
+            @Override
+            public String toString() {
+                return String.format("%s, ålder %d år, började fysik %d",
+                        getName(), getAge(), getYear());
+            }
+        }
+
+        class Datalog extends Human {
+
+            private Datalog(String name, int year, int age)
+                    throws TooLateException, TooSoonException, TooYoungException {
+                super(name, year, age);
+            }
+
+            @Override
+            public String toString() {
+                return String.format("%s, ålder %d år, började data %d",
+                        getName(), getAge(), getYear());
+            }
+        }
+
         String type = year.substring(0, 1);
-        int newYear = Integer.parseInt(year.substring(1));
-        if ("F".equals(type)) {
-            return new Fysiker(age, name, newYear);
-        } else if ("D".equals(type)) {
-            return new Datalog(age, name, newYear);
-        } else {
-            return new Human(age, name) {
-            };
+        int fullYear = Integer.parseInt(year.substring(1));
+        if (fullYear < 15) {
+            fullYear += 2000;
+        } else if (fullYear < 100) {
+            fullYear += 1900;
+        }
+        switch (type) {
+            case "F":
+                return new Fysiker(name, fullYear, age);
+            case "D":
+                return new Datalog(name, fullYear, age);
+            default:
+                throw new UndefinedTypeException();
         }
     }
 }
