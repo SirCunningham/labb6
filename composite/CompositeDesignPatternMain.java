@@ -3,38 +3,27 @@ package labb6.composite;
 public class CompositeDesignPatternMain {
 
     public static void main(String[] args) {
-        Component hair = new Leaf("ett hårspänne", 1);
-        Component toiletBag = new Composite("en necessär", 1);
-        Component bag = new Composite("en påse", 1);
-        Component soap = new Composite("en tvål", 1);
-        Component test = new Leaf("ett test", 1);
-        Component water = new Leaf("vatten", 1);
-        soap.add(water);
-        bag.add(hair);
-        toiletBag.add(bag);
-        toiletBag.add(soap);
-        toiletBag.add(test);
-
-        Composite clone = (Composite) toiletBag.clone();
-        System.out.println(clone.equals(toiletBag));
-        System.out.println(format(toiletBag.toString()));
-        System.out.println("------");
-        System.out.println(format(clone.toString()));
-        /*
-        System.out.println(toiletBag);
-        System.out.println(toiletBag.getTotalWeight());
-         * 
-         */
+        Component travelBag = new Composite("En resväska", 2);
+        Component bag = new Composite("en påse", 0.1);
+        Component pencilBox = new Composite("ett pennskrin", 0.3);
+        Component pants = new Leaf("en byxa", 0.4);
+        Component schampoo = new Leaf("en schampoo", 0.3);
+        Component soap = new Leaf("en tvål", 0.3);
+        Component toothBrush = new Leaf("en tandborste", 0.1);
+        Component pencil = new Leaf("en penna", 0.05);
+        Component eraser = new Leaf("ett suddigum", 0.1);
+        Component lead = new Leaf("ett stift", 0.01);
         
-        for (Component clon : toiletBag) {
-            System.out.println(clon);
-        }
-
-        //WidthIterator iter = toiletBag.createWidthIterator();
-        for (Component comp : toiletBag) {
-            System.out.println(comp);
-        }
-
+        travelBag.add(bag);
+        travelBag.add(pencilBox);
+        travelBag.add(pants);
+        bag.add(schampoo);
+        bag.add(soap);
+        bag.add(toothBrush);
+        pencilBox.add(pencil);
+        pencilBox.add(eraser);
+        pencilBox.add(lead);
+        System.out.println(travelBag);
     }
 
     public static String format(String str) {
