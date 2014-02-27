@@ -7,12 +7,12 @@ public class CompositeDesignPatternMain {
         Component bag = new Composite("en påse", 0.1);
         Component pencilBox = new Composite("ett pennskrin", 0.3);
         Component pants = new Leaf("en byxa", 0.4);
-        Component schampoo = new Leaf("en schampoo", 0.3);
+        Component schampoo = new Leaf("schampoo", 0.3);
         Component soap = new Leaf("en tvål", 0.3);
         Component toothBrush = new Leaf("en tandborste", 0.1);
         Component pencil = new Leaf("en penna", 0.05);
         Component eraser = new Leaf("ett suddigum", 0.1);
-        Component lead = new Leaf("ett stift", 0.01);
+        Component lead = new Leaf("stift", 0.01);
         
         travelBag.add(bag);
         travelBag.add(pencilBox);
