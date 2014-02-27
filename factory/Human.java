@@ -100,13 +100,14 @@ public abstract class Human implements Comparable<Human> {
         } else if (fullYear < 100) {
             fullYear += 1900;
         }
-        switch (type) {
-            case "F":
-                return new Fysiker(name, fullYear, age);
-            case "D":
-                return new Datalog(name, fullYear, age);
-            default:
-                throw new UndefinedTypeException();
+        
+        //switch med string fungerar inte i java 1.6
+        if (type.equals("F")) {
+            return new Fysiker(name, fullYear, age);
+        } else if (type.equals("D")) {
+            return new Datalog(name, fullYear, age);
+        } else {
+            throw new UndefinedTypeException();
         }
     }
 }
