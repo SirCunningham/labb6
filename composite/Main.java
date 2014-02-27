@@ -26,7 +26,7 @@ public class Main {
         printComponent(travelBag);
         System.out.println("--------------");
         for (Component comp : travelBag) {
-            System.out.println(comp);
+            printComponent(comp);
         }
         System.out.println("------copy--------");
         Component travelBagCopy = travelBag.clone();
@@ -43,7 +43,7 @@ public class Main {
 
     public static void printComponent(Component component) {
         String str = component.toString();
-        System.out.println(str.substring(0, 1).toUpperCase()
-                + str.substring(1, str.length() - 2) + ".");
+        System.out.println(String.format("%s%s.",
+                str.substring(0, 1).toUpperCase(), str.substring(1, str.length())));
     }
 }

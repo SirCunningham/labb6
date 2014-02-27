@@ -15,21 +15,21 @@ public class HumanTest {
         try {
             /**
             class Maskinare extends Human {
-            
-            private Maskinare(String name, int year, int age)
-            throws TooLateException, TooSoonException, TooYoungException {
-            super(name, year, age);
+
+                private Maskinare(String name, int year, int age)
+                        throws TooLateException, TooSoonException, TooYoungException {
+                    super(name, year, age);
+                }
+
+                @Override
+                public String toString() {
+                    return String.format("%s, ålder %d år, började maskin %d",
+                            getName(), getAge(), getYear());
+                }
             }
-            
-            @Override
-            public String toString() {
-            return String.format("%s, ålder %d år, började maskin %d",
-            getName(), getAge(), getYear());
-            }
-            }
-            
+
             Human hum = new Maskinare("Putte", 2003, 28);
-             **/
+            **/
         } catch (Exception e) {
             System.err.println("Något gick tyvärr fel.");
             e.printStackTrace();

@@ -29,27 +29,13 @@ public class Composite extends Component {
     }
 
     @Override
-    public String toString() {
-        String str = String.format("%s, som innehåller ", name);
-        String adder = " och inget mer, ";
-        for (int i = 0; i < components.size(); i++) {
-            if (i == components.size() - 1 && components.size() != 1) {
-                str += "och ";
-                adder = ", ";
-            }
-            str += components.get(i).toString();
-        }
-        return str.substring(0, str.length() - 1) + adder;
+    public String getName() {
+        return name;
     }
-
+    
     @Override
     public double getWeight() {
         return weight;
-    }
-
-    @Override
-    public String getName() {
-        return name;
     }
 
     @Override
@@ -59,6 +45,22 @@ public class Composite extends Component {
             size += component.getTotalWeight();
         }
         return size;
+    }
+    
+    @Override
+    public String toString() {
+        String str = String.format("%s, som innehåller ", name);
+        String adder = ", men inget mer";
+        for (int i = 0; i < components.size(); i++) {
+            if (i > 0) {
+                str += ", ";
+            }
+            if (i == components.size() - 1 && components.size() != 1) {
+                str += "och ";
+            }
+            str += components.get(i).toString();
+        }
+        return str + adder;
     }
 
     @Override

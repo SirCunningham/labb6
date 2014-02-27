@@ -5,8 +5,8 @@ import java.util.Random.*;
 
 public class BuilderList<E> implements List<E> {
 
-    private List<E> addList = new LinkedList<E>();
-    private List<E> getList = new ArrayList<E>();
+    private List<E> addList = new LinkedList<>();
+    private List<E> getList = new ArrayList<>();
     private boolean needsUpdate = true;
 
     @Override
@@ -18,7 +18,7 @@ public class BuilderList<E> implements List<E> {
     @Override
     public E get(int index) {
         if (needsUpdate) {
-            getList = new ArrayList<E>(addList);
+            getList = new ArrayList<>(addList);
             needsUpdate = false;
         }
         return getList.get(index);

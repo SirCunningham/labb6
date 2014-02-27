@@ -26,13 +26,13 @@ public class Leaf extends Component {
     }
 
     @Override
-    public String toString() {
-        return String.format("%s ", name);
+    public String getName() {
+        return name;
     }
 
     @Override
-    public String getName() {
-        return name;
+    public double getWeight() {
+        return weight;
     }
 
     @Override
@@ -41,8 +41,8 @@ public class Leaf extends Component {
     }
 
     @Override
-    public double getWeight() {
-        return weight;
+    public String toString() {
+        return name;
     }
 
     @Override
