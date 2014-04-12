@@ -5,7 +5,7 @@ import java.util.Random.*;
 
 public class BuilderList<E> implements List<E> {
 
-    private List<E> addList = new LinkedList<>();
+    private final List<E> addList = new LinkedList<>();
     private List<E> getList = new ArrayList<>();
     private boolean needsUpdate = true;
 
