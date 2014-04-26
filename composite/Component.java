@@ -21,5 +21,5 @@ public abstract class Component implements Iterable<Component>, Cloneable {
     public abstract DepthIterator createDepthIterator();
 
     @Override
-    public abstract Component clone();
+    public abstract Component clone() throws CloneNotSupportedException;
 }

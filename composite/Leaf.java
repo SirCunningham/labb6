@@ -61,7 +61,7 @@ public class Leaf extends Component {
     }
 
     @Override
-    public Component clone() {
+    public Component clone() throws CloneNotSupportedException {
         return new Leaf(name, weight);
     }
 }

@@ -81,7 +81,7 @@ public class Composite extends Component {
     }
 
     @Override
-    public Component clone() {
+    public Component clone() throws CloneNotSupportedException {
         Composite compositeClone = new Composite(name, weight);
         for (Component comp : components) {
             if (comp instanceof Composite) {
